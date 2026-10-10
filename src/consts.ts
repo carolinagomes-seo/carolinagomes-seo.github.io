@@ -1,5 +1,5 @@
 // Site-wide name and description (used by the RSS feed and metadata)
-export const SITE_TITLE = 'ACmkt';
+export const SITE_TITLE = 'Carolina Gomes';
 export const SITE_DESCRIPTION =
 	'Portfolio of Ana Carolina Gomes, SEO specialist: case studies, skills and articles on SEO, brand visibility and AI search.';
 

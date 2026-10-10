@@ -7,14 +7,14 @@ import { caseUrl, getCaseStudies, hasPage } from '../utils/cases';
 import { getPosts, postUrl } from '../utils/posts';
 
 export const GET: APIRoute = async ({ site }) => {
-	const base = (site ?? new URL('https://ac-mkt.github.io')).href.replace(/\/$/, '');
+	const base = (site ?? new URL('https://carolinagomes-seo.github.io')).href.replace(/\/$/, '');
 	const current = EXPERIENCE.find((job) => job.dates.endsWith('Present'));
 
 	const cases = (await getCaseStudies()).filter(hasPage);
 	const posts = await getPosts();
 
 	const lines = [
-		`# ${AUTHOR.name} (ACmkt)`,
+		`# ${AUTHOR.name} (${AUTHOR.alternateName})`,
 		'',
 		`> ${AUTHOR.name} is an ${AUTHOR.jobTitle} based in ${AUTHOR.location}. ${AUTHOR.shortBio}`,
 		'',

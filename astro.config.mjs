@@ -5,7 +5,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://ac-mkt.github.io',
+	site: 'https://carolinagomes-seo.github.io',
 	integrations: [sitemap()],
 	// Inline the (small) CSS into each page so it doesn't block the first render
 	build: { inlineStylesheets: 'always' },

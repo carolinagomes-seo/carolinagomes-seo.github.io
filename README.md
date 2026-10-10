@@ -1,6 +1,6 @@
-# ACmkt: Ana Carolina Gomes, SEO & GEO
+# Carolina Gomes: Ana Carolina Gomes, SEO & GEO
 
-Source code of my portfolio, live at **[ac-mkt.github.io](https://ac-mkt.github.io)**.
+Source code of my portfolio, live at **[carolinagomes-seo.github.io](https://carolinagomes-seo.github.io)**.
 
 I'm an SEO & GEO specialist based in Belo Horizonte, Brazil, working across content, on-page and off-page SEO, with a focus on link building and Digital PR. The site holds my case studies, skills, blog and CV.
 
@@ -16,7 +16,7 @@ I'm an SEO & GEO specialist based in Belo Horizonte, Brazil, working across cont
 - Canonical URLs, Open Graph and Twitter card tags on every page
 - One JSON-LD graph per page, linked by `@id`: `WebSite` everywhere; `ProfilePage` + `Person` (with `knowsAbout`, `hasCredential`, `worksFor`) on About; `BlogPosting`, `FAQPage` (read from the post's FAQ section) and `Blog` on the blog; `Article` and `CollectionPage` on case studies; `ContactPage`, `WebPage` and `BreadcrumbList` elsewhere
 - XML sitemap, RSS feed and a `robots.txt` that welcomes AI search crawlers
-- Auto-generated [`/llms.txt`](https://ac-mkt.github.io/llms.txt) summarizing the site for AI assistants
+- Auto-generated [`/llms.txt`](https://carolinagomes-seo.github.io/llms.txt) summarizing the site for AI assistants
 - Bylines, author box, word count and reading time on every post, from one author file
 
 ## Project structure

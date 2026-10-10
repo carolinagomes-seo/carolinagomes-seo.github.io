@@ -2,9 +2,9 @@
 import { getImage } from 'astro:assets';
 import { AUTHOR, BLOG_ID, EDUCATION, EXPERIENCE, LANGUAGES, PERSON_ID, WEBSITE_ID } from '../data/author';
 
-const FALLBACK_SITE = new URL('https://ac-mkt.github.io');
+const FALLBACK_SITE = new URL('https://carolinagomes-seo.github.io');
 
-// Absolute URL for a site path ("/about/#person" -> "https://ac-mkt.github.io/about/#person")
+// Absolute URL for a site path ("/about/#person" -> "https://carolinagomes-seo.github.io/about/#person")
 export const absolute = (site: URL | undefined, path: string) => new URL(path, site ?? FALLBACK_SITE).href;
 
 export const ids = (site: URL | undefined) => ({
@@ -57,6 +57,7 @@ export async function personNode(site: URL | undefined) {
 		'@type': 'Person',
 		'@id': ids(site).person,
 		name: AUTHOR.name,
+		alternateName: AUTHOR.alternateName,
 		url: absolute(site, AUTHOR.aboutUrl),
 		image: absolute(site, photo.src),
 		jobTitle: AUTHOR.jobTitle,

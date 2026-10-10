@@ -2,6 +2,7 @@
 // Prints ONE JSON-LD script with an @graph: the WebSite (every page) plus any page-specific
 // nodes passed in `nodes` (ProfilePage + Person on About, BlogPosting + breadcrumb on posts...).
 import { SITE_TITLE } from '../consts';
+import { AUTHOR } from '../data/author';
 import { ids } from '../utils/schema';
 
 interface Props {
@@ -19,6 +20,7 @@ const graph = {
 			'@id': website,
 			url: new URL('/', website).href,
 			name: SITE_TITLE,
+			alternateName: AUTHOR.name,
 			inLanguage: 'en',
 			publisher: { '@id': person },
 		},

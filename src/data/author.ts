@@ -4,6 +4,8 @@ import { CERTIFICATIONS, SKILL_AREAS } from './skills';
 
 export const AUTHOR = {
 	name: 'Ana Carolina Gomes',
+	// Short brand name. Always in full, never shortened to "Carolina"
+	alternateName: 'Carolina Gomes',
 	jobTitle: 'SEO & GEO Specialist',
 	location: 'Belo Horizonte, Brazil',
 	address: { addressLocality: 'Belo Horizonte', addressRegion: 'MG', addressCountry: 'BR' },
