@@ -1,5 +1,6 @@
 ---
 // A case study page (only cases with a written body get one). Same reading layout as blog posts.
+import { getImage } from 'astro:assets';
 import { render } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
@@ -8,6 +9,7 @@ import { CASE_TYPE_LONG, caseUrl, getCaseStudies, hasPage } from '../../utils/ca
 import { formatDate, isoDate } from '../../utils/date';
 import { readingDuration, readingTime, wordCount } from '../../utils/readingTime';
 import { absolute, authorRef, breadcrumb, ids } from '../../utils/schema';
+import { pageTitle } from '../../utils/title';
 
 export async function getStaticPaths() {
 	const cases = (await getCaseStudies()).filter(hasPage);
@@ -16,9 +18,19 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, metric, status, tools, pubDate, report } = entry.data;
+const { title, description, metric, status, tools, pubDate, updatedDate, image, imageAlt, report } = entry.data;
 const type = CASE_TYPE_LONG[entry.data.type];
 const result = metric ? `${metric.value} ${metric.label}` : status ? `${status.label}: ${status.note}` : '';
+
+// Social / schema image: a 1200px JPG of the case's own image, or the default social image
+const shareImage = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
+const share = shareImage
+	? {
+			src: shareImage.src,
+			width: Number(shareImage.attributes.width),
+			height: Number(shareImage.attributes.height),
+		}
+	: { src: '/og-default.png', width: 1200, height: 630 };
 
 // Article + breadcrumb, added to the site graph
 const pageUrl = absolute(Astro.site, caseUrl(entry));
@@ -28,9 +40,14 @@ const schema = [
 		'@id': `${pageUrl}#article`,
 		headline: title,
 		description,
-		image: absolute(Astro.site, '/og-default.png'),
+		image: {
+			'@type': 'ImageObject',
+			url: absolute(Astro.site, share.src),
+			width: share.width,
+			height: share.height,
+		},
 		datePublished: pubDate.toISOString(),
-		dateModified: pubDate.toISOString(),
+		dateModified: (updatedDate ?? pubDate).toISOString(),
 		author: authorRef(Astro.site),
 		publisher: { '@id': ids(Astro.site).person },
 		mainEntityOfPage: pageUrl,
@@ -53,10 +70,14 @@ const schema = [
 <html lang="en">
 	<head>
 		<BaseHead
-			title={`${title} | Ana Carolina Gomes`}
+			title={pageTitle(title)}
 			description={description}
+			image={share.src}
+			imageWidth={share.width}
+			imageHeight={share.height}
+			imageAlt={imageAlt}
 			type="article"
-			article={{ publishedTime: pubDate, modifiedTime: pubDate }}
+			article={{ publishedTime: pubDate, modifiedTime: updatedDate ?? pubDate }}
 			schema={schema}
 		/>
 	</head>
@@ -90,6 +111,14 @@ const schema = [
 					<dt>Published</dt>
 					<dd>
 						<time datetime={isoDate(pubDate)}>{formatDate(pubDate)}</time> · {readingTime(entry.body)} min read
+						{
+							updatedDate && (
+								<>
+									{' '}
+									· Updated <time datetime={isoDate(updatedDate)}>{formatDate(updatedDate)}</time>
+								</>
+							)
+						}
 					</dd>
 				</div>
 			</dl>

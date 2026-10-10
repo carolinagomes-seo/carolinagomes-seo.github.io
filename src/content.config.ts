@@ -29,23 +29,29 @@ const caseStudies = defineCollection({
 	loader: glob({ base: './src/content/case-studies', pattern: '**/*.md' }),
 	// A case with a Markdown body gets its own page (/case-studies/<slug>/); one without
 	// is listed as a plain, non-clickable row. See src/utils/cases.ts.
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		type: z.enum(['professional', 'course', 'personal']),
-		order: z.number().default(99),
-		draft: z.boolean().default(false),
-		// Headline number shown on the right of the row
-		metric: z.object({ value: z.string(), label: z.string() }).optional(),
-		// Shown instead of a metric while the work isn't finished
-		status: z
-			.object({ label: z.string(), tone: z.enum(['progress', 'ongoing']), note: z.string() })
-			.optional(),
-		pubDate: z.coerce.date(),
-		tools: z.array(z.string()).default([]),
-		// Full write-up as a PDF in public/, offered as a download on the case page
-		report: z.string().optional(),
-	}),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			type: z.enum(['professional', 'course', 'personal']),
+			order: z.number().default(99),
+			draft: z.boolean().default(false),
+			// Headline number shown on the right of the row
+			metric: z.object({ value: z.string(), label: z.string() }).optional(),
+			// Shown instead of a metric while the work isn't finished
+			status: z
+				.object({ label: z.string(), tone: z.enum(['progress', 'ongoing']), note: z.string() })
+				.optional(),
+			pubDate: z.coerce.date(),
+			// Set when the case is revised; shown on the page and used as dateModified
+			updatedDate: z.coerce.date().optional(),
+			// Share and schema image (a file in src/assets); without one, the default social image is used
+			image: image().optional(),
+			imageAlt: z.string().optional(),
+			tools: z.array(z.string()).default([]),
+			// Full write-up as a PDF in public/, offered as a download on the case page
+			report: z.string().optional(),
+		}),
 });
 
 export const collections = { blog, caseStudies };

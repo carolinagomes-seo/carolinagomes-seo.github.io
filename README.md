@@ -75,6 +75,7 @@ metric: { value: '250+', label: 'links per quarter' } # or:
 # status: { label: 'In progress', tone: 'progress', note: 'Full write-up soon' }
 pubDate: 2026-10-07
 tools: ['Ahrefs', 'Python']
+# Optional: updatedDate, image + imageAlt (share and schema image; defaults to og-default.png)
 ---
 ```
 

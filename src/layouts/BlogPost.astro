@@ -10,6 +10,7 @@ import Footer from '../components/Footer.astro';
 import { AUTHOR } from '../data/author';
 import { formatDate, isoDate } from '../utils/date';
 import { postUrl, type Post } from '../utils/posts';
+import { pageTitle } from '../utils/title';
 import { readingDuration, readingTime, wordCount } from '../utils/readingTime';
 import { extractFaq } from '../utils/faq';
 import { absolute, authorRef, breadcrumb, ids } from '../utils/schema';
@@ -84,7 +85,7 @@ if (faq.length > 0) {
 <html lang="en">
 	<head>
 		<BaseHead
-			title={`${title} | Ana Carolina Gomes`}
+			title={pageTitle(title)}
 			description={description}
 			image={shareImage.src}
 			imageWidth={shareWidth}
