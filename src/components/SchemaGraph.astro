@@ -1,9 +1,10 @@
 ---
-// Prints ONE JSON-LD script with an @graph: the WebSite (every page) plus any page-specific
-// nodes passed in `nodes` (ProfilePage + Person on About, BlogPosting + breadcrumb on posts...).
+// Prints ONE JSON-LD script with an @graph: the WebSite and the Person (every page) plus any
+// page-specific nodes passed in `nodes` (ProfilePage on About, BlogPosting + breadcrumb on posts...).
+// Page nodes point to the Person by @id only, so it is printed once per page.
 import { SITE_TITLE } from '../consts';
 import { AUTHOR } from '../data/author';
-import { ids } from '../utils/schema';
+import { ids, personNode } from '../utils/schema';
 
 interface Props {
 	nodes?: Record<string, unknown>[];
@@ -24,6 +25,7 @@ const graph = {
 			inLanguage: 'en',
 			publisher: { '@id': person },
 		},
+		await personNode(Astro.site),
 		...nodes,
 	],
 };

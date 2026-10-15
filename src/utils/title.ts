@@ -1,10 +1,8 @@
 import { AUTHOR } from '../data/author';
 
-// Google shows about 60 characters of a title. Add the author name only when it still fits,
-// so long titles keep their keywords visible instead of being cut off.
-const MAX_LENGTH = 60;
-
-export function pageTitle(title: string): string {
-	const branded = `${title} | ${AUTHOR.name}`;
-	return branded.length <= MAX_LENGTH ? branded : title;
+// Every page title is "Page topic | Ana Carolina Gomes". Google shows about 60 characters,
+// so keep the topic to 39 characters or less; posts and case studies with a longer
+// title set a shorter `seoTitle` in their frontmatter.
+export function pageTitle(topic: string): string {
+	return `${topic} | ${AUTHOR.name}`;
 }

@@ -8,7 +8,7 @@ export const AUTHOR = {
 	alternateName: 'Carolina Gomes',
 	jobTitle: 'SEO & GEO Specialist',
 	location: 'Belo Horizonte, Brazil',
-	address: { addressLocality: 'Belo Horizonte', addressRegion: 'MG', addressCountry: 'BR' },
+	address: { addressLocality: 'Belo Horizonte', addressRegion: 'Minas Gerais', addressCountry: 'BR' },
 	shortBio:
 		'Almost four years in SEO across content, on-page and off-page, mostly in international, high-competition markets, with a focus on link building and Digital PR.',
 	photo: portrait,

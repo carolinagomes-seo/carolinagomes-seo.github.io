@@ -1,5 +1,6 @@
 ---
 title: 'What is SEO? A simple, complete guide for beginners'
+seoTitle: "What is SEO? A beginner's guide"
 description: 'Learn what SEO is, how search engines work, the three types of SEO, E-E-A-T and how SEO differs from GEO, with real examples from my work.'
 pubDate: 2026-10-07
 category: 'SEO basics'
@@ -55,7 +56,7 @@ Search engines work in four steps: they crawl the web to find pages, render them
 
 A simple way to remember it: first Google has to **find** your page, then **understand** it, then **trust** it.
 
-Google isn't the only engine that matters. Bing powers its own results and also feeds several AI search tools, so it's worth checking your site in [Bing Webmaster Tools](https://www.bing.com/webmasters) as well as [Google Search Console](https://search.google.com/search-console/about). Both are free.
+Google isn't the only engine that matters. Bing powers its own results and also feeds several AI search tools, so it's worth checking your site in [Bing Webmaster Tools](https://www.bing.com/webmasters/about) as well as [Google Search Console](https://search.google.com/search-console/about). Both are free.
 
 ## What are the main types of SEO?
 

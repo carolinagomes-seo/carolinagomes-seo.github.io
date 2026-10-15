@@ -30,7 +30,7 @@ export const pageNode = (
 	{ path, name, description, type = 'WebPage', extra = {} }: {
 		path: string;
 		name: string;
-		description: string;
+		description?: string;
 		type?: string;
 		extra?: Record<string, unknown>;
 	},
@@ -41,7 +41,7 @@ export const pageNode = (
 		'@id': `${url}#webpage`,
 		url,
 		name,
-		description,
+		...(description ? { description } : {}),
 		inLanguage: 'en',
 		isPartOf: { '@id': ids(site).website },
 		about: { '@id': ids(site).person },
@@ -49,7 +49,24 @@ export const pageNode = (
 	};
 };
 
-// The full Person entity (printed on the About page)
+// The Blog, short form. Posts add it so their isPartOf resolves on the same page;
+// the blog index extends it with the description and the post list.
+export const blogNode = (site: URL | undefined) => ({
+	'@type': 'Blog',
+	'@id': ids(site).blog,
+	url: absolute(site, '/blog/'),
+	name: 'Blog',
+	inLanguage: 'en',
+	isPartOf: { '@id': ids(site).website },
+	author: { '@id': ids(site).person },
+	publisher: { '@id': ids(site).person },
+});
+
+// The case studies list page, short form, so a case study's isPartOf resolves on the same page
+export const caseStudiesNode = (site: URL | undefined) =>
+	pageNode(site, { path: '/case-studies/', name: 'Case studies', type: 'CollectionPage' });
+
+// The full Person entity (printed once on every page by SchemaGraph.astro)
 export async function personNode(site: URL | undefined) {
 	const photo = await getImage({ src: AUTHOR.photo, width: 800, height: 800, format: 'jpg' });
 	const current = EXPERIENCE.find((job) => job.dates.endsWith('Present'));
@@ -78,10 +95,5 @@ export async function personNode(site: URL | undefined) {
 	};
 }
 
-// Short author reference used by posts
-export const authorRef = (site: URL | undefined) => ({
-	'@id': ids(site).person,
-	'@type': 'Person',
-	name: AUTHOR.name,
-	url: absolute(site, AUTHOR.aboutUrl),
-});
+// Author reference used by posts and case studies (the Person node is in the same graph)
+export const authorRef = (site: URL | undefined) => ({ '@id': ids(site).person });

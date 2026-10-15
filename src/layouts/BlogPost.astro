@@ -13,7 +13,7 @@ import { postUrl, type Post } from '../utils/posts';
 import { pageTitle } from '../utils/title';
 import { readingDuration, readingTime, wordCount } from '../utils/readingTime';
 import { extractFaq } from '../utils/faq';
-import { absolute, authorRef, breadcrumb, ids } from '../utils/schema';
+import { absolute, authorRef, blogNode, breadcrumb, ids } from '../utils/schema';
 
 interface Props {
 	post: Post;
@@ -21,7 +21,7 @@ interface Props {
 }
 
 const { post, headings = [] } = Astro.props;
-const { title, description, pubDate, updatedDate, category, tags, image, imageAlt, imageCredit, imageCreditUrl } =
+const { title, seoTitle, description, pubDate, updatedDate, category, tags, image, imageAlt, imageCredit, imageCreditUrl } =
 	post.data;
 
 const toc = headings.filter((h) => h.depth === 2);
@@ -57,6 +57,7 @@ const schema: Record<string, unknown>[] = [
 		timeRequired: readingDuration(post.body),
 		inLanguage: 'en',
 	},
+	blogNode(Astro.site),
 	breadcrumb(Astro.site, [
 		['Home', '/'],
 		['Blog', '/blog/'],
@@ -85,7 +86,7 @@ if (faq.length > 0) {
 <html lang="en">
 	<head>
 		<BaseHead
-			title={pageTitle(title)}
+			title={pageTitle(seoTitle ?? title)}
 			description={description}
 			image={shareImage.src}
 			imageWidth={shareWidth}
@@ -177,7 +178,7 @@ if (faq.length > 0) {
 			</div>
 
 			<aside class="author-box" aria-label="About the author">
-				<Image src={AUTHOR.photo} alt={AUTHOR.name} width={80} height={80} densities={[1, 2, 3]} />
+				<Image src={AUTHOR.photo} alt="" width={80} height={80} densities={[1, 2, 3]} />
 				<div class="box-text">
 					<p class="box-label">Written by</p>
 					<p class="box-name">{AUTHOR.name}</p>

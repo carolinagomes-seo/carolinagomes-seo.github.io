@@ -9,6 +9,9 @@ const blog = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			// Shorter title for <title> when the full one doesn't fit before " | Ana Carolina Gomes"
+			// (39 characters or less). The H1 and schema keep `title`.
+			seoTitle: z.string().max(39).optional(),
 			description: z.string(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
@@ -32,6 +35,9 @@ const caseStudies = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			// Shorter title for <title> when the full one doesn't fit before " | Ana Carolina Gomes"
+			// (39 characters or less). The H1 and schema keep `title`.
+			seoTitle: z.string().max(39).optional(),
 			// Shown on the list card and as the page lede
 			description: z.string(),
 			// Meta description (and schema description) when it should differ from the card text;

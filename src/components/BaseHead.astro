@@ -63,8 +63,12 @@ const googleVerification = '3fV4GH4Urk2x1QbUafsUUqzSzxA3oyUl7zXSgfxMmOE';
 
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonicalURL} />
-{noindex && <meta name="robots" content="noindex, follow" />}
+<!-- noindex pages (the 404) get no canonical: their own URL isn't a real page -->
+{!noindex && <link rel="canonical" href={canonicalURL} />}
+<meta
+	name="robots"
+	content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+/>
 <meta name="author" content="Ana Carolina Gomes" />
 <meta name="theme-color" content="#efeeeb" />
 <meta name="generator" content={Astro.generator} />
@@ -89,7 +93,7 @@ const googleVerification = '3fV4GH4Urk2x1QbUafsUUqzSzxA3oyUl7zXSgfxMmOE';
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content={canonicalURL} />
+{!noindex && <meta property="og:url" content={canonicalURL} />}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageURL} />

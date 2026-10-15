@@ -1,5 +1,6 @@
 ---
 title: 'How I built a free SEO portfolio with Astro and GitHub Pages'
+seoTitle: 'How I built my SEO portfolio with Astro'
 description: 'How I built my SEO portfolio in five days for $0 with Astro and GitHub Pages: 12 steps, the mistakes I fixed and the SEO, schema and GEO setup.'
 pubDate: 2026-10-10
 category: 'Technical SEO'
@@ -71,7 +72,7 @@ Here are the other key decisions:
 
 You need four free things: Node.js, Git, a GitHub account and a code editor. You don't need to know how to code, but you'll use the terminal a lot.
 
-- **[Node.js](https://nodejs.org/):** runs Astro on your computer. I installed v24 LTS with the Windows installer and skipped the Docker option the site suggested.
+- **[Node.js](https://nodejs.org/en):** runs Astro on your computer. I installed v24 LTS with the Windows installer and skipped the Docker option the site suggested.
 - **[Git](https://git-scm.com/):** tracks your changes and sends them to GitHub.
 - **A [GitHub](https://github.com/) account:** hosts your code and, through GitHub Pages, your website. Choose your username carefully, because it becomes part of your site's address.
 - **[VS Code](https://code.visualstudio.com/):** a free editor with a built-in terminal.
@@ -93,7 +94,7 @@ You create an Astro project, push it to a GitHub repository named after your use
 9. **Build the case studies as a content collection.** Each case study is one Markdown file with a shared template: challenge, strategy, execution and results. A status field marks unfinished cases as "in progress", so they don't show up as broken pages.
 10. **Add technical SEO and GEO.** Connected JSON-LD schema, a share image, a favicon, `robots.txt`, an auto-generated `llms.txt`, a self-hosted font and trailing-slash links. I explain each one below.
 11. **Publish the first content.** The [GreenSip case study](/case-studies/greensip-mini-capstone/) and the post [What is SEO? A simple, complete guide for beginners](/blog/what-is-seo/), with an optimized hero image.
-12. **Clean up and request indexing.** I removed leftovers from the template, submitted the sitemap in [Google Search Console](https://search.google.com/search-console/about), requested indexing and imported the site into [Bing Webmaster Tools](https://www.bing.com/webmasters).
+12. **Clean up and request indexing.** I removed leftovers from the template, submitted the sitemap in [Google Search Console](https://search.google.com/search-console/about), requested indexing and imported the site into [Bing Webmaster Tools](https://www.bing.com/webmasters/about).
 
 One thing that looked like an error wasn't: right after I submitted the sitemap, Search Console showed "Couldn't fetch". New properties often show this until Google reads the file for the first time.
 
@@ -241,4 +242,4 @@ It took me five days from installing the tools to requesting indexing, including
 - Geeky Tech: [GEO in different content types: blogs, guides, docs](https://www.geekytech.co.uk/geo-in-different-content-types-blogs-guides-docs/)
 - llmstxt.org: [The llms.txt proposal](https://llmstxt.org/)
 - Google: [Rich Results Test](https://search.google.com/test/rich-results) and [Search Console](https://search.google.com/search-console/about)
-- Microsoft: [Bing Webmaster Tools](https://www.bing.com/webmasters)
+- Microsoft: [Bing Webmaster Tools](https://www.bing.com/webmasters/about)

@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local SEO audit report
+seo-audit-report.md
+
+# local screenshots
+audits/GA4 Details.png
