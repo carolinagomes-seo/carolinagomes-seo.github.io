@@ -1,6 +1,7 @@
 ---
 title: 'GreenSip: an answer-ready article on a YMYL topic'
 description: 'Keyword strategy, AI-assisted writing and schema markup for "green tea for weight loss", built for a fictional wellness brand to practice content that search engines and AI tools can trust.'
+metaDescription: 'Keyword strategy, AI-assisted writing and schema markup for a "green tea for weight loss" article, built for a fictional wellness brand.'
 type: 'course'
 order: 3
 metric:

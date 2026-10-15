@@ -32,7 +32,11 @@ const caseStudies = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
+			// Shown on the list card and as the page lede
 			description: z.string(),
+			// Meta description (and schema description) when it should differ from the card text;
+			// aim for 120–155 characters
+			metaDescription: z.string().optional(),
 			type: z.enum(['professional', 'course', 'personal']),
 			order: z.number().default(99),
 			draft: z.boolean().default(false),

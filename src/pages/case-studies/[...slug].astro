@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, metric, status, tools, pubDate, updatedDate, image, imageAlt, report } = entry.data;
+const { title, description, metaDescription = description, metric, status, tools, pubDate, updatedDate, image, imageAlt, report } = entry.data;
 const type = CASE_TYPE_LONG[entry.data.type];
 const result = metric ? `${metric.value} ${metric.label}` : status ? `${status.label}: ${status.note}` : '';
 
@@ -39,7 +39,7 @@ const schema = [
 		'@type': 'Article',
 		'@id': `${pageUrl}#article`,
 		headline: title,
-		description,
+		description: metaDescription,
 		image: {
 			'@type': 'ImageObject',
 			url: absolute(Astro.site, share.src),
@@ -71,7 +71,7 @@ const schema = [
 	<head>
 		<BaseHead
 			title={pageTitle(title)}
-			description={description}
+			description={metaDescription}
 			image={share.src}
 			imageWidth={share.width}
 			imageHeight={share.height}
