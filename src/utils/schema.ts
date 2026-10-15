@@ -1,5 +1,4 @@
 // Helpers for the JSON-LD graph printed by SchemaGraph.astro
-import { getImage } from 'astro:assets';
 import { AUTHOR, BLOG_ID, EDUCATION, EXPERIENCE, LANGUAGES, PERSON_ID, WEBSITE_ID } from '../data/author';
 
 const FALLBACK_SITE = new URL('https://carolinagomes-seo.github.io');
@@ -68,7 +67,6 @@ export const caseStudiesNode = (site: URL | undefined) =>
 
 // The full Person entity (printed once on every page by SchemaGraph.astro)
 export async function personNode(site: URL | undefined) {
-	const photo = await getImage({ src: AUTHOR.photo, width: 800, height: 800, format: 'jpg' });
 	const current = EXPERIENCE.find((job) => job.dates.endsWith('Present'));
 	return {
 		'@type': 'Person',
@@ -76,7 +74,7 @@ export async function personNode(site: URL | undefined) {
 		name: AUTHOR.name,
 		alternateName: AUTHOR.alternateName,
 		url: absolute(site, AUTHOR.aboutUrl),
-		image: absolute(site, photo.src),
+		image: absolute(site, AUTHOR.photoUrl),
 		jobTitle: AUTHOR.jobTitle,
 		description: AUTHOR.shortBio,
 		address: { '@type': 'PostalAddress', ...AUTHOR.address },

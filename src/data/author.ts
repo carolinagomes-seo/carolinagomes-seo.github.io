@@ -12,6 +12,8 @@ export const AUTHOR = {
 	shortBio:
 		'Almost four years in SEO across content, on-page and off-page, mostly in international, high-competition markets, with a focus on link building and Digital PR.',
 	photo: portrait,
+	// Stable copy of the photo in public/ for the Person schema (the /_astro/ path changes with each build)
+	photoUrl: '/ana-carolina-gomes.jpg',
 	aboutUrl: '/about/',
 	caseStudiesUrl: '/case-studies/',
 	email: 'contato.carolpss@gmail.com',
