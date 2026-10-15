@@ -1,6 +1,6 @@
 ---
 title: 'How I built a free SEO portfolio with Astro and GitHub Pages'
-description: 'How I built my SEO portfolio in five days for $0 with Astro and GitHub Pages: the 12 steps, the mistakes I fixed and the technical SEO, schema and GEO setup.'
+description: 'How I built my SEO portfolio in five days for $0 with Astro and GitHub Pages: 12 steps, the mistakes I fixed and the SEO, schema and GEO setup.'
 pubDate: 2026-10-10
 category: 'Technical SEO'
 image: '../../assets/website-wireframe-sketches-black-and-white.jpg'

@@ -6,8 +6,9 @@ import Footer from '../components/Footer.astro';
 import Collapsible from '../components/Collapsible.astro';
 import { AUTHOR, EDUCATION, EXPERIENCE, LANGUAGES } from '../data/author';
 import { absolute, breadcrumb, ids, personNode } from '../utils/schema';
+import { pageTitle } from '../utils/title';
 
-const title = 'About — Ana Carolina Gomes';
+const title = pageTitle('About: SEO and GEO specialist');
 const description =
 	'Ana Carolina Gomes is an SEO & GEO specialist in Belo Horizonte, Brazil, focused on link building, Digital PR and AI-assisted SEO workflows.';
 
@@ -45,11 +46,14 @@ const schema = [
 	<body>
 		<Header />
 		<main id="main" class="page">
+			<!-- The page's only H1. Reads "About" on tablet and desktop, hidden visually on phones,
+			     where the profile name below takes its place. -->
+			<header class="page-intro about-intro">
+				<h1>About<span class="sr-only"> Ana Carolina Gomes</span></h1>
+			</header>
+
 			<!-- Tablet and desktop -->
 			<div class="d-only">
-				<header class="page-intro">
-					<h1>About</h1>
-				</header>
 
 				<div class="layout">
 					<div class="story">
@@ -126,7 +130,7 @@ const schema = [
 						loading="eager"
 					/>
 					<div class="m-profile-text">
-						<h1>{AUTHOR.name}</h1>
+						<p class="m-name">{AUTHOR.name}</p>
 						<span class="m-role">{AUTHOR.jobTitle} · Belo Horizonte</span>
 					</div>
 				</div>
@@ -310,7 +314,16 @@ const schema = [
 			min-width: 0;
 		}
 
-		.m-profile h1 {
+		.about-intro {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+
+		.m-profile .m-name {
 			margin: 0;
 			color: var(--ink);
 			font-size: 26px;

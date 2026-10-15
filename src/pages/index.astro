@@ -8,8 +8,9 @@ import portrait from '../assets/ana-carolina-gomes-color.jpg';
 import { formatDate, isoDate } from '../utils/date';
 import { AUTHOR } from '../data/author';
 import { pageNode } from '../utils/schema';
+import { pageTitle } from '../utils/title';
 
-const title = 'Ana Carolina Gomes — SEO and brand visibility';
+const title = pageTitle('SEO and brand visibility specialist');
 const description =
 	'How brands get found, trusted and cited in search: projects and notes from practice by Ana Carolina Gomes, SEO specialist in Belo Horizonte, Brazil.';
 
@@ -121,7 +122,7 @@ const latest = (await getPosts()).slice(0, 2);
 									<a class="m-post" href={postUrl(post)}>
 										<Image
 											src={post.data.image}
-											alt={post.data.imageAlt}
+											alt=""
 											width={88}
 											height={64}
 											densities={[1, 2, 3]}

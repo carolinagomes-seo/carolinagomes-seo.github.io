@@ -5,12 +5,13 @@ import Footer from '../components/Footer.astro';
 import Collapsible from '../components/Collapsible.astro';
 import { CERTIFICATIONS, CERTIFICATIONS_INTRO, LEARNING, SKILL_AREAS } from '../data/skills';
 import { breadcrumb, pageNode } from '../utils/schema';
+import { pageTitle } from '../utils/title';
 
 // Closed-section summary on phones: the first 3 skills, then "+N" for the rest
 const areaSummary = (items: string[]) =>
 	items.slice(0, 3).join(', ') + (items.length > 3 ? ` +${items.length - 3}` : '');
 
-const title = 'Skills — Ana Carolina Gomes';
+const title = pageTitle('SEO, GEO and Digital PR skills');
 const description =
 	'SEO, GEO, link building, Digital PR and AI automation skills of Ana Carolina Gomes, with the tools she uses and the certifications she holds.';
 
@@ -84,16 +85,20 @@ const schema = [
 						{
 							CERTIFICATIONS.map((cert) =>
 								cert.url ? (
-									<a class="m-cert" href={cert.url} target="_blank" rel="noopener">
-										<span class="m-cert-name">{cert.name}</span>
+									<div class="m-cert linked">
+										<span class="m-cert-name">
+											<a class="stretched-link" href={cert.url} target="_blank" rel="noopener noreferrer">
+												{cert.name}
+												<span class="sr-only"> (opens in a new tab)</span>
+											</a>
+										</span>
 										<span class="m-cert-meta">
 											{cert.issuer}, {cert.year}
 										</span>
-										<span class="m-cert-link">
-											View certificate <span aria-hidden="true">↗</span>
-											<span class="sr-only">(opens in a new tab)</span>
+										<span class="m-cert-link" aria-hidden="true">
+											View certificate ↗
 										</span>
-									</a>
+									</div>
 								) : (
 									<div class="m-cert">
 										<span class="m-cert-name">{cert.name}</span>
@@ -152,16 +157,20 @@ const schema = [
 						{
 							CERTIFICATIONS.map((cert) =>
 								cert.url ? (
-									<a class="cert" href={cert.url} target="_blank" rel="noopener">
-										<span class="cert-name">{cert.name}</span>
+									<div class="cert linked">
+										<span class="cert-name">
+											<a class="stretched-link" href={cert.url} target="_blank" rel="noopener noreferrer">
+												{cert.name}
+												<span class="sr-only"> (opens in a new tab)</span>
+											</a>
+										</span>
 										<span class="cert-meta">
 											{cert.issuer}, {cert.year}
 										</span>
-										<span class="cert-link">
-											View certificate <span aria-hidden="true">↗</span>
-											<span class="sr-only">(opens in a new tab)</span>
+										<span class="cert-link" aria-hidden="true">
+											View certificate ↗
 										</span>
-									</a>
+									</div>
 								) : (
 									<div class="cert">
 										<span class="cert-name">{cert.name}</span>
@@ -284,7 +293,11 @@ const schema = [
 		text-underline-offset: 4px;
 	}
 
-	a.cert:hover .cert-name {
+	.linked {
+		position: relative;
+	}
+
+	.cert.linked:hover .cert-name {
 		text-decoration: underline;
 	}
 

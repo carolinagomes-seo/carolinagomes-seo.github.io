@@ -49,6 +49,18 @@ const googleVerification = '3fV4GH4Urk2x1QbUafsUUqzSzxA3oyUl7zXSgfxMmOE';
 <!-- Basics -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Google tag (gtag.js), GA4. is:inline keeps Astro from bundling it, so it ships as Google gives it. -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-V5207GYS8Y"></script>
+<script is:inline>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-V5207GYS8Y');
+</script>
+
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />

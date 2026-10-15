@@ -3,8 +3,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { pageTitle } from '../utils/title';
 
-const title = 'Page not found | Ana Carolina Gomes';
+const title = pageTitle('Page not found');
 const description = 'This page doesn’t exist or has moved.';
 ---
 

@@ -4,10 +4,11 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { CASE_TYPES, caseUrl, getCaseStudies, hasPage } from '../../utils/cases';
 import { absolute, breadcrumb, pageNode } from '../../utils/schema';
+import { pageTitle } from '../../utils/title';
 
 const cases = await getCaseStudies();
 
-const title = 'Case studies — Ana Carolina Gomes';
+const title = pageTitle('SEO and Digital PR case studies');
 const description =
 	'SEO case studies by Ana Carolina Gomes: link building and Digital PR across international markets, AI-assisted workflows, and course and personal projects.';
 
@@ -80,16 +81,23 @@ const schema = [
 			<ul class="list">
 				{
 					cases.map((entry) => {
-						const Row = hasPage(entry) ? 'a' : 'div';
 						const { metric, status } = entry.data;
 						return (
 							<li data-type={entry.data.type}>
-								<Row class:list={['row', { linked: hasPage(entry) }]} href={hasPage(entry) ? caseUrl(entry) : undefined}>
+								<div class:list={['row', { linked: hasPage(entry) }]}>
 									<div class="main">
-										<h2 class="title">{entry.data.title}</h2>
+										<h2 class="title">
+											{hasPage(entry) ? (
+												<a class="stretched-link" href={caseUrl(entry)}>
+													{entry.data.title}
+												</a>
+											) : (
+												entry.data.title
+											)}
+										</h2>
 										<p class="desc">{entry.data.description}</p>
 										{hasPage(entry) && (
-											<span class="read">
+											<span class="read" aria-hidden="true">
 												Read case study
 												<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
 													<path d="M5 12h14M13 6l6 6-6 6" />
@@ -114,7 +122,7 @@ const schema = [
 											</>
 										)}
 									</div>
-								</Row>
+								</div>
 							</li>
 						);
 					})
@@ -248,6 +256,10 @@ const schema = [
 		letter-spacing: -0.01em;
 		line-height: 1.25;
 		text-underline-offset: 4px;
+	}
+
+	.linked {
+		position: relative;
 	}
 
 	.linked:hover .title {

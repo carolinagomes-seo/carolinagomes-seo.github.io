@@ -8,10 +8,11 @@ import { formatDate, isoDate } from '../../utils/date';
 import { getPosts, postUrl, topicSlug } from '../../utils/posts';
 import { readingTime } from '../../utils/readingTime';
 import { absolute, breadcrumb, ids } from '../../utils/schema';
+import { pageTitle } from '../../utils/title';
 
 const posts = await getPosts();
 
-const title = 'Blog | Ana Carolina Gomes';
+const title = pageTitle('SEO and GEO blog: practical guides');
 const description =
 	'Practical guides to SEO, brand visibility and AI search by Ana Carolina Gomes, with real examples from her work in competitive markets.';
 const intro =
@@ -110,11 +111,11 @@ const schema = [
 					posts.map((post, i) => (
 						<li data-category={topicSlug(post.data.category)}>
 							<article class="post">
-								<a class="post-link" href={postUrl(post)}>
+								<div class="post-card">
 									<Image
 										class="post-img"
 										src={post.data.image}
-										alt={post.data.imageAlt}
+										alt=""
 										widths={[88, 176, 208, 264, 416]}
 										sizes="(max-width: 767px) 88px, 208px"
 										loading={i === 0 ? 'eager' : 'lazy'}
@@ -124,16 +125,20 @@ const schema = [
 											{post.data.category} · <time datetime={isoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time> ·{' '}
 											{readingTime(post.body)} min<span class="d-only"> read</span>
 										</p>
-										<h2 class="post-title">{post.data.title}</h2>
+										<h2 class="post-title">
+											<a class="stretched-link" href={postUrl(post)}>
+												{post.data.title}
+											</a>
+										</h2>
 										<p class="post-desc">{post.data.description}</p>
-										<span class="read d-only">
+										<span class="read d-only" aria-hidden="true">
 											Read article
 											<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
 												<path d="M5 12h14M13 6l6 6-6 6" />
 											</svg>
 										</span>
 									</div>
-								</a>
+								</div>
 							</article>
 						</li>
 					))
@@ -398,7 +403,8 @@ const schema = [
 		border-bottom: 1px solid var(--line);
 	}
 
-	.post-link {
+	.post-card {
+		position: relative;
 		display: flex;
 		align-items: flex-start;
 		gap: 32px;
@@ -406,7 +412,7 @@ const schema = [
 		text-decoration: none;
 	}
 
-	.post-link :global(.post-img) {
+	.post-card :global(.post-img) {
 		flex: none;
 		width: 208px;
 		height: 136px;
@@ -442,7 +448,7 @@ const schema = [
 		text-underline-offset: 4px;
 	}
 
-	.post-link:hover .post-title {
+	.post-card:hover .post-title {
 		text-decoration: underline;
 	}
 
@@ -536,12 +542,12 @@ const schema = [
 			padding: 20px 0;
 		}
 
-		.post-link {
+		.post-card {
 			gap: 16px;
 		}
 
 		/* Small thumbnail only; no large images on phones */
-		.post-link :global(.post-img) {
+		.post-card :global(.post-img) {
 			width: 88px;
 			height: 64px;
 			margin-top: 2px;
