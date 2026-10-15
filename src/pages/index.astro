@@ -71,9 +71,9 @@ const latest = (await getPosts()).slice(0, 2);
 						/>
 						<div class="m-author-text">
 							<span class="m-author-name">Ana Carolina Gomes</span>
-							<span class="m-author-role">SEO &amp; GEO Specialist</span>						</div>
+							<span class="m-author-role">{AUTHOR.jobTitle}</span>						</div>
 					</div>
-					<p class="eyebrow d-only">Ana Carolina Gomes · SEO &amp; GEO Specialist · Belo Horizonte, Brazil</p>
+					<p class="eyebrow d-only">{AUTHOR.name} · {AUTHOR.jobTitle} · {AUTHOR.location}</p>
 					<h1 id="hero-title">How brands get found, trusted and cited in search.</h1>
 					<p class="intro d-only">
 						In almost four years of SEO, I’ve worked across content, on-page and off-page, mostly in
