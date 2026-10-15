@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Collapsible from '../components/Collapsible.astro';
 import { AUTHOR, EDUCATION, EXPERIENCE, LANGUAGES } from '../data/author';
-import { absolute, breadcrumb, ids, personNode } from '../utils/schema';
+import { absolute, breadcrumb, ids } from '../utils/schema';
 import { pageTitle } from '../utils/title';
 
 const title = pageTitle('About: SEO and GEO specialist');
@@ -19,8 +19,8 @@ const numbers = [
 	{ value: '25%', label: 'lower cost / link' },
 ];
 
-// ProfilePage + the full Person entity: this page is where the author lives.
-// Posts and the rest of the site point to it by @id.
+// ProfilePage: this page is where the author lives. The Person itself is in every page's
+// graph (SchemaGraph.astro); here it is only referenced by @id.
 const pageUrl = absolute(Astro.site, '/about/');
 const schema = [
 	{
@@ -30,7 +30,6 @@ const schema = [
 		mainEntity: { '@id': ids(Astro.site).person },
 		isPartOf: { '@id': ids(Astro.site).website },
 	},
-	await personNode(Astro.site),
 	breadcrumb(Astro.site, [
 		['Home', '/'],
 		['About', '/about/'],
@@ -123,7 +122,7 @@ const schema = [
 				<div class="m-profile">
 					<Image
 						src={AUTHOR.photo}
-						alt="Ana Carolina Gomes"
+						alt=""
 						width={80}
 						height={80}
 						densities={[1, 2, 3]}
@@ -158,7 +157,7 @@ const schema = [
 						</svg>
 						Download CV<span class="sr-only"> (PDF)</span>
 					</a>
-					<a class="btn" href={AUTHOR.linkedinUrl} target="_blank" rel="noopener me">
+					<a class="btn" href={AUTHOR.linkedinUrl} target="_blank" rel="noopener noreferrer me">
 						LinkedIn<span class="sr-only"> (opens in a new tab)</span>
 					</a>
 				</div>
@@ -210,7 +209,7 @@ const schema = [
 
 					<Collapsible title="Languages" summary="Portuguese, English (C1), Spanish (A1)">
 						<ul class="m-langs">
-							{LANGUAGES.map((l) => <li>{l.name} — {l.level}</li>)}
+							{LANGUAGES.map((l) => <li>{l.name} ({l.level})</li>)}
 						</ul>
 					</Collapsible>
 				</div>

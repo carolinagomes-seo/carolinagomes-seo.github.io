@@ -8,7 +8,7 @@ import Footer from '../../components/Footer.astro';
 import { CASE_TYPE_LONG, caseUrl, getCaseStudies, hasPage } from '../../utils/cases';
 import { formatDate, isoDate } from '../../utils/date';
 import { readingDuration, readingTime, wordCount } from '../../utils/readingTime';
-import { absolute, authorRef, breadcrumb, ids } from '../../utils/schema';
+import { absolute, authorRef, breadcrumb, caseStudiesNode, ids } from '../../utils/schema';
 import { pageTitle } from '../../utils/title';
 
 export async function getStaticPaths() {
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, metaDescription = description, metric, status, tools, pubDate, updatedDate, image, imageAlt, report } = entry.data;
+const { title, seoTitle, description, metaDescription = description, metric, status, tools, pubDate, updatedDate, image, imageAlt, report } = entry.data;
 const type = CASE_TYPE_LONG[entry.data.type];
 const result = metric ? `${metric.value} ${metric.label}` : status ? `${status.label}: ${status.note}` : '';
 
@@ -51,13 +51,14 @@ const schema = [
 		author: authorRef(Astro.site),
 		publisher: { '@id': ids(Astro.site).person },
 		mainEntityOfPage: pageUrl,
-		isPartOf: { '@id': `${absolute(Astro.site, '/case-studies/')}#webpage` },
+		isPartOf: { '@id': caseStudiesNode(Astro.site)['@id'] },
 		articleSection: type,
 		keywords: tools,
 		wordCount: wordCount(entry.body),
 		timeRequired: readingDuration(entry.body),
 		inLanguage: 'en',
 	},
+	caseStudiesNode(Astro.site),
 	breadcrumb(Astro.site, [
 		['Home', '/'],
 		['Case studies', '/case-studies/'],
@@ -70,7 +71,7 @@ const schema = [
 <html lang="en">
 	<head>
 		<BaseHead
-			title={pageTitle(title)}
+			title={pageTitle(seoTitle ?? title)}
 			description={metaDescription}
 			image={share.src}
 			imageWidth={share.width}

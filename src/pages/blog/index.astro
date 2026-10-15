@@ -7,7 +7,7 @@ import { AUTHOR } from '../../data/author';
 import { formatDate, isoDate } from '../../utils/date';
 import { getPosts, postUrl, topicSlug } from '../../utils/posts';
 import { readingTime } from '../../utils/readingTime';
-import { absolute, breadcrumb, ids } from '../../utils/schema';
+import { absolute, blogNode, breadcrumb } from '../../utils/schema';
 import { pageTitle } from '../../utils/title';
 
 const posts = await getPosts();
@@ -26,16 +26,10 @@ const topics = [...counts.entries()]
 	.map(([name]) => ({ name, slug: topicSlug(name) }));
 
 // Blog + breadcrumb, added to the site graph
-const blogUrl = absolute(Astro.site, '/blog/');
 const schema = [
 	{
-		'@type': 'Blog',
-		'@id': ids(Astro.site).blog,
-		url: blogUrl,
-		name: 'Blog',
+		...blogNode(Astro.site),
 		description: intro,
-		author: { '@id': ids(Astro.site).person },
-		publisher: { '@id': ids(Astro.site).person },
 		blogPost: posts.map((post) => {
 			const url = absolute(Astro.site, postUrl(post));
 			return {
