@@ -12,17 +12,7 @@ imageCreditUrl: 'https://unsplash.com/pt-br/fotografias/fotografia-em-tons-de-ci
 
 **Link building is the work of getting other websites to link to yours.** Search engines read those links as votes of trust: a link from a relevant, respected site tells Google your page is worth showing. It's the biggest part of off-page SEO, and today it also helps AI tools like ChatGPT and Google's AI Overviews recognize your brand.
 
-> **About the author:** I'm Ana Carolina Gomes, and link building has been my main job since 2023. I run outreach and media partnerships for websites in international, high-competition markets, where my team and I build 250+ links per quarter. In this guide, I explain how link building works in plain words, with the process I use every week.
-
-**In this post, you'll learn:**
-
-- Why links still matter for SEO and AI search
-- What makes a link good or bad
-- The types of links and what the rel attributes mean
-- How link building works, step by step
-- Which tactics work today, and which ones to avoid
-- How link building connects to digital PR
-- How to measure results
+> **About the author:** I'm Ana Carolina Gomes, and link building has been my main job since 2023. I run outreach and media partnerships for websites in international, high-competition markets, where my team and I build 250+ links per quarter. In this guide, I explain how link building works in plain words.
 
 **Key takeaways**
 
@@ -34,7 +24,7 @@ imageCreditUrl: 'https://unsplash.com/pt-br/fotografias/fotografia-em-tons-de-ci
 
 ## Why do links matter for SEO and AI search?
 
-Links matter because they do three jobs at once: they help search engines find your pages, they signal that other people trust you, and they bring real visitors. Content and technical SEO make a page good. Links are how the rest of the web says so.
+Links help search engines find your pages, signal that other people trust you, bring real visitors and help AI tools connect your brand to your topic. Content and technical SEO make a page good. Links are how the rest of the web says so.
 
 - **Discovery.** Search engine crawlers move around the web by following links. A new page with no links pointing to it is hard to find. If you're new to crawling and indexing, start with [*What is SEO?*](/blog/what-is-seo/)
 - **Trust.** A link from a respected site in your field works like a recommendation. That's why Google treats links meant only to manipulate rankings as spam: real links carry weight because they're earned.
@@ -73,22 +63,15 @@ Links differ in two ways: the label in their code (the rel attribute) and the wa
 | `rel="ugc"` | The link was added by users | Comments, forum posts |
 | `rel="nofollow"` | The site doesn't want to vouch for the link | Sites that link out but don't endorse |
 
-Google says links with these attributes are generally not followed. That doesn't make them useless: a nofollow link in a popular article still brings readers and brand visibility.
+Google says links with these attributes are generally not followed, though they can still bring readers.
 
-**By source:** These are the most common ways links are earned:
-
-- **Editorial links:** a writer links to you because your page helps their article.
-- **Guest posts:** you write an article for another site, with a link back to yours.
-- **Digital PR mentions:** journalists cover your story or data and cite you.
-- **Resource pages:** a site lists useful tools or guides on a topic and includes yours.
-- **Broken link replacements:** you find a dead link on a site and suggest your page as a replacement.
-- **Unlinked mentions:** a site names your brand without linking, and you ask them to add the link.
+**By source:** Editorial links happen when a writer links to you because your page helps their article. The rest come from outreach, and the tactics table below compares the most common ways to earn them.
 
 ## How does link building work, step by step?
 
 Link building works as a repeatable process: choose what you want links to, find the right sites, offer them something useful, then check and measure every link. This is the process I follow every week.
 
-1. **Pick the pages that deserve links.** Start with pages that are useful and matter to the business, like a guide, a tool, or a key service page. A link to a weak page is wasted effort.
+1. **Pick the pages that deserve links.** Start with pages that are useful and matter to the business, like a guide, a tool, or a key service page.
 2. **Research who could link to you.** Look at which sites link to your competitors, which publications cover your topic, and which pages already rank for your keywords. Backlink tools, even free versions, make this much faster.
 3. **Vet every site.** Run the checks from the table above. In my experience, this step saves more money than any other, because a bad link costs the same as a good one.
 4. **Reach out with something useful.** A short, personal email that explains why your content helps their readers works better than a template. Offer an article idea, a data point, or a fix for a broken link.
@@ -96,9 +79,7 @@ Link building works as a repeatable process: choose what you want links to, find
 6. **Check the placement.** When the link goes live, confirm the URL, the anchor, the rel attribute, and that the page can be indexed.
 7. **Track and report.** Record every link with its date, site, target page, and cost, so you can see what worked.
 
-**What this looks like at scale:** My team and I build 250+ links per quarter across international, high-competition markets. Two habits made the biggest difference. First, strict vetting: by balancing link quality with acquisition cost, we reached about 25% lower cost per link. Second, automation: writing a brief for each placement by hand was slow and easy to get wrong, so I built a workflow with Claude Code and Python that creates the briefs automatically.
-
-> **See the proof:** [Read my link building case studies](/case-studies/), with the problem, the process, and the results.
+**What this looks like at scale:** Two habits made the biggest difference for my team. First, strict vetting: by balancing link quality with acquisition cost, we reached about 25% lower cost per link. Second, automation: writing a brief for each placement by hand was slow and easy to get wrong, so I built a workflow with Claude Code and Python that creates the briefs automatically.
 
 ## Which link building tactics work today?
 
@@ -146,7 +127,7 @@ Digital PR is one way to do link building, and both now feed the same goal: maki
 
 In practice, I use both. Outreach and partnerships bring steady links to the pages that need them; digital PR brings links from sites that are hard to reach any other way.
 
-The AI side is where this gets interesting. Tools like ChatGPT, Perplexity, and Google's AI Overviews tend to cite sources that other trusted sites already reference. So a brand that is linked and mentioned across respected sites in its field has a better chance of showing up in AI answers. That's why I think of links and mentions as the off-page half of GEO, which I explain in more detail in [*What is SEO?*](/blog/what-is-seo/)
+The AI side is where this gets interesting. Tools like ChatGPT, Perplexity, and Google's AI Overviews tend to cite sources that other trusted sites already reference. So a brand that is linked and mentioned across respected sites in its field has a better chance of showing up in AI answers. That's why I think of links and mentions as the off-page half of GEO (generative engine optimization).
 
 ## How do you measure link building results?
 
@@ -167,7 +148,7 @@ Give it time. Links usually take weeks or months to show an effect on rankings, 
 
 ### Is link building still important?
 
-Yes. Links still help search engines find pages and judge which ones to trust, and they also help AI tools connect your brand to a topic. What has changed is that quality matters far more than quantity.
+Yes. Links still help search engines judge which pages to trust, but quality now matters far more than quantity.
 
 ### How many backlinks do I need?
 
@@ -177,31 +158,12 @@ There's no fixed number. Look at how many referring domains the pages ranking fo
 
 Yes. They usually don't pass ranking value, but a nofollow link on a popular site still brings readers and brand visibility. A natural link profile has a mix of both.
 
-### Is buying links against Google's rules?
-
-Buying links that pass ranking value is. Paid links are fine when they're labeled with `rel="sponsored"` or `rel="nofollow"`.
-
-### How long does link building take to work?
-
-Usually weeks to months. New links need to be found and processed, and results build up over time, so judge them over a quarter.
-
 ### Can I do link building without a budget?
 
-Yes. Start by fixing unlinked mentions, getting listed on relevant resource pages, and creating one piece of content worth citing. It takes more time than money.
+Yes. Unlinked mentions, resource pages and one piece of content worth citing cost more time than money.
 
 ## Final thoughts: where should you start?
 
-Link building rewards patience and honesty more than tricks. Earn links from relevant sites, give them a real reason to link, and check every placement. Do that consistently, and links will help both your rankings and your visibility in AI answers.
+Link building rewards patience and honesty more than tricks. Start with one page worth linking to, go after the easy wins first, and track every link from day one. Done consistently, this helps both your rankings and your visibility in AI answers.
 
-If you're just starting:
-
-1. Make sure you have at least one page worth linking to.
-2. Fix the easy wins: unlinked mentions and relevant resource pages.
-3. Track every link from day one, with its date, site, and target page.
-
-New to SEO as a whole? Read [*What is SEO? A simple, complete guide for beginners*](/blog/what-is-seo/) first. To see link building applied to real projects, visit my [case studies](/case-studies/), or connect with me on [LinkedIn](https://www.linkedin.com/in/anacpsg) to compare notes.
-
-## Sources
-
-- Google Search Central: [Spam policies for Google web search](https://developers.google.com/search/docs/essentials/spam-policies)
-- Google Search Central: [Qualify your outbound links to Google](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)
+You can see my link building work in my [case studies](/case-studies/), or connect with me on [LinkedIn](https://www.linkedin.com/in/anacpsg) to compare notes.
