@@ -119,7 +119,7 @@ const latest = (await getPosts()).slice(0, 2);
 						<ul class="m-posts">
 							{latest.map((post) => (
 								<li>
-									<a class="m-post" href={postUrl(post)}>
+									<div class="m-post">
 										<Image
 											src={post.data.image}
 											alt=""
@@ -133,9 +133,11 @@ const latest = (await getPosts()).slice(0, 2);
 												{post.data.category} ·{' '}
 												<time datetime={isoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time>
 											</span>
-											<span class="m-post-title">{post.data.title}</span>
+											<a class="m-post-title stretched-link" href={postUrl(post)}>
+												{post.data.title}
+											</a>
 										</span>
-									</a>
+									</div>
 								</li>
 							))}
 						</ul>
@@ -879,6 +881,7 @@ const latest = (await getPosts()).slice(0, 2);
 		}
 
 		.m-post {
+			position: relative;
 			display: flex;
 			align-items: center;
 			gap: 16px;

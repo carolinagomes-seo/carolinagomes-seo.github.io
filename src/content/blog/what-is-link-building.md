@@ -142,6 +142,8 @@ Measure link building in two layers: the links themselves, and what they changed
 | Referral traffic | Whether people actually click the links | Google Analytics |
 | Brand mentions and AI citations | Whether your brand is becoming part of the conversation | Manual checks in AI tools, alerts for your brand name |
 
+You can track most of these with free tools; I explain how in [my guide to free SEO tools](/blog/free-seo-tools/).
+
 Give it time. Links usually take weeks or months to show an effect on rankings, so compare results over a quarter, not a week. That's also why I review cost per link and quality every quarter, not after each placement.
 
 ## FAQ

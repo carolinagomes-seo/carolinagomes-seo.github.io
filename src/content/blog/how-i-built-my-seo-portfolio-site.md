@@ -12,7 +12,7 @@ imageCreditUrl: 'https://unsplash.com/pt-br/fotografias/esbocos-em-aquarela-de-l
 
 **I built my SEO portfolio as a static Astro site, hosted for free on GitHub Pages and published automatically with GitHub Actions.** It took five days, from October 6 to 10, 2026, including fixing deploy errors and a rebrand. And the total cost? Zero.
 
-I'm [Ana Carolina Gomes](/about/), an SEO & GEO specialist. I had never used Node.js or a static site generator before this project, and I built it with help from Claude, an AI assistant. This post covers the full process: the steps, the decisions, the mistakes and what I'd do differently. The result is live at [carolinagomes-seo.github.io](/), the site you're reading now.
+I'm Ana Carolina Gomes, an SEO & GEO specialist. I had never used Node.js or a static site generator before this project, and I built it with help from Claude, an AI assistant. This post covers the full process: the steps, the decisions, the mistakes and what I'd do differently. The result is live at [carolinagomes-seo.github.io](/), the site you're reading now.
 
 **Key takeaways**
 
@@ -93,7 +93,7 @@ You create an Astro project, push it to a GitHub repository named after your use
 8. **Design the structure.** I planned a header and six main pages: Home (a short intro, real numbers, selected work and contact), About, Skills, Contact, Case studies and Blog. I studied other portfolios and kept a minimal black-and-white style.
 9. **Build the case studies as a content collection.** Each case study is one Markdown file with a shared template: challenge, strategy, execution and results. A status field marks unfinished cases as "in progress", so they don't show up as broken pages.
 10. **Add technical SEO and GEO.** Connected JSON-LD schema, a share image, a favicon, `robots.txt`, an auto-generated `llms.txt`, a self-hosted font and trailing-slash links. I explain each one below.
-11. **Publish the first content.** The [GreenSip case study](/case-studies/greensip-mini-capstone/) and the post [What is SEO? A simple, complete guide for beginners](/blog/what-is-seo/), with an optimized hero image.
+11. **Publish the first content.** The [GreenSip case study](/case-studies/greensip-mini-capstone/) and the post *What is SEO? A simple, complete guide for beginners*, with an optimized hero image.
 12. **Clean up and request indexing.** I removed leftovers from the template, submitted the sitemap in [Google Search Console](https://search.google.com/search-console/about), requested indexing and imported the site into [Bing Webmaster Tools](https://www.bing.com/webmasters/about).
 
 One thing that looked like an error wasn't: right after I submitted the sitemap, Search Console showed "Couldn't fetch". New properties often show this until Google reads the file for the first time.
@@ -210,7 +210,7 @@ The biggest lesson: decide your name and your address before you write any code.
 12. **Plan the author entity and schema first,** since they decide what must be visible on each page.
 13. **Collect proof as you work,** like before-and-after numbers and screenshots, instead of rebuilding it later.
 
-Want to see these basics applied to a real project? Read the [GreenSip case study](/case-studies/greensip-mini-capstone/). New to SEO? Start with [What is SEO? A simple, complete guide for beginners](/blog/what-is-seo/). And if you'd like to talk about SEO or GEO work, [get in touch](/contact/) or [connect with me on LinkedIn](https://www.linkedin.com/in/anacpsg).
+Want to see the free tools I set up on this site, and what each one showed me? Read [*Free SEO tools in 2026: the stack I actually use*](/blog/free-seo-tools/). And if you'd like to talk about SEO or GEO work, [get in touch](/contact/) or [connect with me on LinkedIn](https://www.linkedin.com/in/anacpsg).
 
 ## FAQ
 

@@ -12,7 +12,7 @@ imageCreditUrl: 'https://www.pexels.com/pt-br/foto/preto-e-branco-p-b-homem-maos
 
 SEO (search engine optimization) is the practice of improving a website so it shows up in the free, unpaid results of search engines like Google and Bing, and today in AI answers from tools like ChatGPT, Perplexity and Google's AI Overviews. It works on three fronts: the content on your pages (on-page SEO), the technical health of your site (technical SEO), and the trust your site earns from other websites, such as links and mentions (off-page SEO).
 
-I'm [Ana Carolina Gomes](/about/), an SEO specialist who has worked in off-page SEO, link building and digital PR since 2023. In this beginner's guide to SEO, I explain every basic part in plain words, with real examples from my own work.
+I'm Ana Carolina Gomes, an SEO specialist who has worked in off-page SEO, link building and digital PR since 2023. In this beginner's guide to SEO, I explain every basic part in plain words, with real examples from my own work.
 
 **In this guide, you'll learn:**
 
@@ -193,7 +193,7 @@ A simple first-week plan:
 - Check the basics: title tag, meta description, headings, image names and alt text, internal and external links.
 - Ask ChatGPT or Perplexity the same question and compare your page with the sources they cite.
 
-I'm following these same steps on this site. To see them applied to a full project, from keyword research to page structure, read my [GreenSip case study](/case-studies/greensip-mini-capstone/).
+I'm following these same steps on this site. For the free tools I use at each step, read [*Free SEO tools in 2026: the stack I actually use*](/blog/free-seo-tools/).
 
 ## FAQ
 
