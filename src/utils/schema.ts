@@ -1,5 +1,5 @@
 // Helpers for the JSON-LD graph printed by SchemaGraph.astro
-import { AUTHOR, BLOG_ID, EDUCATION, EXPERIENCE, LANGUAGES, PERSON_ID, WEBSITE_ID } from '../data/author';
+import { AUTHOR, BLOG_ID, EDUCATION, LANGUAGES, PERSON_ID, WEBSITE_ID } from '../data/author';
 
 const FALLBACK_SITE = new URL('https://carolinagomes-seo.github.io');
 
@@ -67,7 +67,6 @@ export const caseStudiesNode = (site: URL | undefined) =>
 
 // The full Person entity (printed once on every page by SchemaGraph.astro)
 export async function personNode(site: URL | undefined) {
-	const current = EXPERIENCE.find((job) => job.dates.endsWith('Present'));
 	return {
 		'@type': 'Person',
 		'@id': ids(site).person,
@@ -79,7 +78,6 @@ export async function personNode(site: URL | undefined) {
 		description: AUTHOR.shortBio,
 		address: { '@type': 'PostalAddress', ...AUTHOR.address },
 		// Facts shown on the About page
-		...(current ? { worksFor: { '@type': 'Organization', name: current.company } } : {}),
 		alumniOf: { '@type': 'CollegeOrUniversity', name: EDUCATION.school },
 		knowsLanguage: LANGUAGES.map((language) => language.name),
 		knowsAbout: AUTHOR.knowsAbout,

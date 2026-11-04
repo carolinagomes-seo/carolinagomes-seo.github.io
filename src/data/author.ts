@@ -24,12 +24,13 @@ export const AUTHOR = {
 	credentials: CERTIFICATIONS,
 };
 
-// About page facts (desktop sidebar and mobile sections both read these)
+// About page facts (desktop sidebar and mobile sections both read these).
+// Dates are years only, no months and no "Present".
 export const EXPERIENCE = [
-	{ role: 'SEO Off-Page Specialist', company: 'Odds Scanner Group', dates: 'Jul 2024 – Present' },
-	{ role: 'Junior Off-Page Specialist', company: 'Odds Scanner Group', dates: 'Sep 2023 – Jul 2024' },
-	{ role: 'SEO Intern', company: 'GShield', dates: 'Feb 2023 – Sep 2023' },
-	{ role: 'Marketing Intern', company: 'BrunSker Tecnologia', dates: 'Sep 2022 – Nov 2022' },
+	{ role: 'SEO Off-Page Specialist', company: 'International online media group', dates: '2024 – 2026' },
+	{ role: 'Junior Off-Page Specialist', company: 'International online media group', dates: '2023 – 2024' },
+	{ role: 'SEO Intern', company: 'GShield', dates: '2023' },
+	{ role: 'Marketing Intern', company: 'BrunSker Tecnologia', dates: '2022' },
 ];
 
 export const EDUCATION = {

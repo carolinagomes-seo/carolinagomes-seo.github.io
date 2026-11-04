@@ -1,6 +1,7 @@
 # Carolina Gomes: all crawlers welcome, including AI search crawlers
 User-agent: *
 Allow: /
+Disallow: /Ana-Carolina-Gomes-CV.pdf
 
 Sitemap: https://carolinagomes-seo.github.io/sitemap.xml
 Sitemap: https://carolinagomes-seo.github.io/sitemap-index.xml
