@@ -136,7 +136,7 @@ if (faq.length > 0) {
 					src={image}
 					alt={imageAlt}
 					widths={[680, 1088, 1200, 1600, 2176]}
-					sizes="(min-width: 1600px) 1200px, (min-width: 1280px) 1088px, calc(100vw - 2 * var(--pad))"
+					sizes="(min-width: 1600px) 1200px, (min-width: 1280px) 1088px, (min-width: 1024px) calc(100vw - 128px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)"
 					loading="eager"
 					fetchpriority="high"
 				/>
@@ -167,7 +167,7 @@ if (faq.length > 0) {
 				<!-- Phones: start the table of contents collapsed so the article is visible first.
 				     Inline so it runs before the first paint (no jump). -->
 				<script is:inline>
-					if (window.matchMedia('(max-width: 600px)').matches) {
+					if (window.matchMedia('(max-width: 767px)').matches) {
 						document.querySelector('.toc')?.removeAttribute('open');
 					}
 				</script>
@@ -216,17 +216,17 @@ if (faq.length > 0) {
 	}
 
 	h1 {
-		max-width: 880px;
+		max-width: var(--measure-title);
 		margin: 24px 0 0;
 		color: var(--ink);
-		font-size: 56px;
+		font-size: var(--fs-title);
 		font-weight: 500;
 		letter-spacing: -0.03em;
 		line-height: 1.05;
 	}
 
 	.lede {
-		max-width: 720px;
+		max-width: var(--measure-lede);
 		margin: 24px 0 0;
 		color: var(--muted);
 		font-size: 20px;
@@ -292,7 +292,10 @@ if (faq.length > 0) {
 
 	.cover :global(img) {
 		width: 100%;
-		height: 440px;
+		height: auto;
+		/* Same shape at every width (1088 x 435 on desktop) instead of a fixed 440px height,
+		   which cropped the cover much more at tablet widths. */
+		aspect-ratio: 5 / 2;
 		border-radius: 16px;
 		object-fit: cover;
 	}
@@ -309,7 +312,7 @@ if (faq.length > 0) {
 
 	/* ---------- Body ---------- */
 	.body {
-		max-width: 680px;
+		max-width: var(--prose);
 		margin: 64px auto 0;
 	}
 
@@ -364,7 +367,7 @@ if (faq.length > 0) {
 		display: grid;
 		grid-template-columns: 80px minmax(0, 1fr);
 		gap: 24px;
-		max-width: 680px;
+		max-width: var(--prose);
 		margin: 64px auto 0;
 		padding: 32px;
 		border-radius: 20px;
@@ -429,9 +432,6 @@ if (faq.length > 0) {
 
 	/* ---------- < 1024px ---------- */
 	@media (max-width: 1023px) {
-		h1 {
-			font-size: 44px;
-		}
 
 		.body,
 		.author-box {
@@ -441,9 +441,6 @@ if (faq.length > 0) {
 
 	/* ---------- < 768px ---------- */
 	@media (max-width: 767px) {
-		h1 {
-			font-size: 32px;
-		}
 
 		.byline {
 			flex-direction: column;
@@ -468,7 +465,7 @@ if (faq.length > 0) {
 	}
 
 	/* Phones: bigger tap areas in the table of contents */
-	@media (max-width: 600px) {
+	@media (max-width: 767px) {
 		.toc {
 			padding-top: 0;
 		}

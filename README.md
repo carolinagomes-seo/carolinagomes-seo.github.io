@@ -1,25 +1,59 @@
-# Carolina Gomes: Ana Carolina Gomes, SEO & GEO
+<div align="center">
 
-Source code of my portfolio, live at **[carolinagomes-seo.github.io](https://carolinagomes-seo.github.io)**.
+# Ana Carolina Gomes
 
-I'm an SEO & GEO specialist based in Belo Horizonte, Brazil, working across content, on-page and off-page SEO, with a focus on link building and Digital PR. The site holds my case studies, skills, blog and CV.
+**SEO & GEO Specialist** · Belo Horizonte, Brazil
 
-## Built with
+Source code of my portfolio: case studies, skills and articles on SEO, Digital PR and AI search.
 
-- [Astro](https://astro.build) (static site, no client-side framework)
-- Markdown content collections for case studies and blog posts
-- Self-hosted Hanken Grotesk font through Astro's font API
-- GitHub Actions + GitHub Pages for deploys
+[**Visit the site**](https://carolinagomes-seo.github.io) · [Case studies](https://carolinagomes-seo.github.io/case-studies/) · [Blog](https://carolinagomes-seo.github.io/blog/) · [LinkedIn](https://www.linkedin.com/in/anacpsg)
+
+[![Deploy to GitHub Pages](https://github.com/carolinagomes-seo/carolinagomes-seo.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/carolinagomes-seo/carolinagomes-seo.github.io/actions/workflows/deploy.yml)
+[![Built with Astro](https://img.shields.io/badge/built%20with-Astro-111111?logo=astro&logoColor=white)](https://astro.build)
+
+<a href="https://carolinagomes-seo.github.io"><img src=".github/assets/preview.png" alt="Home page of the portfolio: the headline How brands get found, trusted and cited in search, next to a portrait of Ana Carolina Gomes" width="860"></a>
+
+</div>
+
+## About
+
+I work across content, on-page and off-page SEO, with a focus on link building and Digital PR. This site is also a working example of that practice: its technical SEO and AI search setup are built into the code.
 
 ## SEO and GEO built in
 
-- Canonical URLs, Open Graph and Twitter card tags on every page
-- One JSON-LD graph per page, linked by `@id`: `WebSite` everywhere; `ProfilePage` + `Person` (with `knowsAbout`, `hasCredential`, `worksFor`) on About; `BlogPosting`, `FAQPage` (read from the post's FAQ section) and `Blog` on the blog; `Article` and `CollectionPage` on case studies; `ContactPage`, `WebPage` and `BreadcrumbList` elsewhere
-- XML sitemap, RSS feed and a `robots.txt` that welcomes AI search crawlers
-- Auto-generated [`/llms.txt`](https://carolinagomes-seo.github.io/llms.txt) summarizing the site for AI assistants
-- Bylines, author box, word count and reading time on every post, from one author file
+- **Metadata:** canonical URLs, Open Graph and Twitter card tags on every page
+- **Structured data:** one JSON-LD graph per page, linked by `@id` (`Person`, `ProfilePage`, `BlogPosting`, `FAQPage`, `Article`, `BreadcrumbList` and more)
+- **Discovery:** XML sitemap, RSS feed and a `robots.txt` that welcomes AI search crawlers
+- **AI search:** auto-generated [`/llms.txt`](https://carolinagomes-seo.github.io/llms.txt) summarizing the site for AI assistants
+- **Authorship:** bylines, author box, word count and reading time on every post, from one author file
 
-## Project structure
+## Built with
+
+- [Astro](https://astro.build): static site, no client-side framework
+- Markdown content collections for case studies and blog posts
+- Self-hosted Hanken Grotesk font through Astro's font API
+- GitHub Actions and GitHub Pages: every push to `main` deploys the site
+
+## Run it locally
+
+Requires Node 22.12 or newer.
+
+```bash
+npm install
+npm run dev
+```
+
+| Command           | Action                                     |
+| :---------------- | :----------------------------------------- |
+| `npm install`     | Install dependencies (Node 22.12 or newer) |
+| `npm run dev`     | Start the dev server at `localhost:4321`   |
+| `npm run build`   | Build the site to `./dist/`                |
+| `npm run preview` | Preview the build locally                  |
+
+To add a post or a case study, see the [content guide](docs/content-guide.md).
+
+<details>
+<summary><strong>Project structure</strong></summary>
 
 ```text
 public/                    CV, favicons, default social image, robots.txt
@@ -45,55 +79,14 @@ src/
 └── content.config.ts      Frontmatter schemas
 ```
 
-## Adding content
-
-**Blog post:** add a Markdown file to `src/content/blog/`:
-
-```yaml
----
-title: 'Post title'
-description: 'One or two sentences.'
-pubDate: 2026-10-07
-category: 'SEO basics' # becomes a topic filter on /blog/
-image: '../../assets/my-cover.jpg' # a file in src/assets/
-imageAlt: 'What the image shows'
-# Optional: updatedDate, tags: ['...'], imageCredit, imageCreditUrl, draft: true
----
-```
-
-A `## FAQ` section with `### Question` headings is turned into `FAQPage` schema automatically.
-
-**Case study:** add a Markdown file to `src/content/case-studies/`. Write a body to give it its own page; leave it empty to list it as a plain row.
-
-```yaml
----
-title: 'Case study title'
-description: 'One-sentence summary.'
-type: 'professional' # or 'course', 'personal'
-order: 1 # lower numbers appear first
-metric: { value: '250+', label: 'links per quarter' } # or:
-# status: { label: 'In progress', tone: 'progress', note: 'Full write-up soon' }
-pubDate: 2026-10-07
-tools: ['Ahrefs', 'Python']
-# Optional: updatedDate, image + imageAlt (share and schema image; defaults to og-default.png)
----
-```
-
-**Skills, experience, certifications:** edit `src/data/skills.ts` and `src/data/author.ts`. The pages, the schema and `llms.txt` all read from these files.
-
-## Commands
-
-| Command           | Action                                     |
-| :---------------- | :----------------------------------------- |
-| `npm install`     | Install dependencies (Node 22.12 or newer) |
-| `npm run dev`     | Start the dev server at `localhost:4321`   |
-| `npm run build`   | Build the site to `./dist/`                |
-| `npm run preview` | Preview the build locally                  |
-
-Every push to `main` builds and deploys the site to GitHub Pages.
+</details>
 
 ## Contact
 
 [LinkedIn](https://www.linkedin.com/in/anacpsg) · [contato.carolpss@gmail.com](mailto:contato.carolpss@gmail.com)
 
+## Credits
+
 Based on Astro's blog starter, itself based on [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+Text, images and CV © Ana Carolina Gomes. All rights reserved.
