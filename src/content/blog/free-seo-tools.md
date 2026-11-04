@@ -102,7 +102,7 @@ For your own site, Ahrefs Webmaster Tools is the most complete free backlink too
 | [Google Alerts](https://www.google.com/alerts) | New mentions of your brand or topic | Free |
 | Google search operators | Unlinked mentions, with a search like `"your brand" -site:yourdomain.com` | Manual |
 
-Link building has been my main work since 2023, and this is the free routine I'd use on a small site:
+I've worked in link building since 2023, and this is the free routine I'd use on a small site:
 
 1. Check Search Console and Ahrefs Webmaster Tools once a month for new and lost links.
 2. Set a Google Alert for your brand name, and ask sites that mention you without linking to add a link.

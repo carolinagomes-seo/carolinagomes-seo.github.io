@@ -66,7 +66,7 @@ Here are the other key decisions:
 | Font         | Self-hosted Hanken Grotesk, preloaded   | Google Fonts link                | Same look, one less external request, better for Core Web Vitals                                    |
 | Brand        | Carolina Gomes, SEO & Brand             | ACmkt and other short names      | ACmkt clashed with existing companies, and the other options were already taken in search results |
 | Address      | carolinagomes-seo.github.io             | A custom domain                  | Free, and a domain can be added later without rebuilding                                            |
-| Positioning  | Competitive, international markets      | Leading with my current industry | Keeps real results visible without tying the site to one niche                                      |
+| Positioning  | Competitive, international markets      | Leading with one industry        | Keeps real results visible without tying the site to one niche                                      |
 
 ## What do you need before you start?
 

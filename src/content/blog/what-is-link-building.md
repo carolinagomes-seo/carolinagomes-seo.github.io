@@ -12,7 +12,7 @@ imageCreditUrl: 'https://unsplash.com/pt-br/fotografias/fotografia-em-tons-de-ci
 
 **Link building is the work of getting other websites to link to yours.** Search engines read those links as votes of trust: a link from a relevant, respected site tells Google your page is worth showing. It's the biggest part of off-page SEO, and today it also helps AI tools like ChatGPT and Google's AI Overviews recognize your brand.
 
-> **About the author:** I'm Ana Carolina Gomes, and link building has been my main job since 2023. I run outreach and media partnerships for websites in international, high-competition markets, where my team and I build 250+ links per quarter. In this guide, I explain how link building works in plain words.
+> **About the author:** I'm Ana Carolina Gomes, and I've worked in link building since 2023, running outreach and media partnerships for websites in international, high-competition markets. I've built 250+ links per quarter. In this guide, I explain how link building works in plain words.
 
 **Key takeaways**
 
@@ -79,7 +79,7 @@ Link building works as a repeatable process: choose what you want links to, find
 6. **Check the placement.** When the link goes live, confirm the URL, the anchor, the rel attribute, and that the page can be indexed.
 7. **Track and report.** Record every link with its date, site, target page, and cost, so you can see what worked.
 
-**What this looks like at scale:** Two habits made the biggest difference for my team. First, strict vetting: by balancing link quality with acquisition cost, we reached about 25% lower cost per link. Second, automation: writing a brief for each placement by hand was slow and easy to get wrong, so I built a workflow with Claude Code and Python that creates the briefs automatically.
+**What this looks like at scale:** Two habits made the biggest difference. First, strict vetting: balancing link quality with acquisition cost brought the cost per link down by about 25%. Second, automation: writing a brief for each placement by hand was slow and easy to get wrong, so I built a workflow with Claude Code and Python that creates the briefs automatically.
 
 ## Which link building tactics work today?
 
