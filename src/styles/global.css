@@ -26,29 +26,45 @@
 	--container: 1088px;
 	--pad: 96px;
 	--content: calc(var(--container) + 2 * var(--pad)); /* outer width incl. padding */
+
+	/* Heading sizes per breakpoint (set in the media queries below, like --pad).
+	   --fs-h1: page titles and the home headline. --fs-title: post and case study titles. */
+	--fs-h1: 64px;
+	--fs-title: 56px;
+
+	/* Text widths */
+	--measure-title: 880px; /* post and case study titles */
+	--measure-lede: 720px; /* lead paragraph under a post title */
+	--measure-intro: 640px; /* lead paragraph under a page title */
 }
 
 @media (min-width: 1600px) {
 	:root {
 		--container: 1200px;
+		--fs-h1: 72px;
 	}
 }
 
 @media (max-width: 1279px) {
 	:root {
 		--pad: 64px;
+		--fs-h1: 56px;
 	}
 }
 
 @media (max-width: 1023px) {
 	:root {
 		--pad: 48px;
+		--fs-h1: 48px;
+		--fs-title: 44px;
 	}
 }
 
 @media (max-width: 767px) {
 	:root {
 		--pad: 24px;
+		--fs-h1: 32px;
+		--fs-title: 32px;
 	}
 }
 
@@ -193,14 +209,14 @@ hr {
 .page-intro h1 {
 	margin: 0;
 	color: var(--ink);
-	font-size: 64px;
+	font-size: var(--fs-h1);
 	font-weight: 500;
 	letter-spacing: -0.03em;
 	line-height: 1.05;
 }
 
 .page-intro p {
-	max-width: 640px;
+	max-width: var(--measure-intro);
 	margin: 24px 0 0;
 	color: var(--ink-2);
 	font-size: 18px;
@@ -213,18 +229,6 @@ hr {
 	text-underline-offset: 4px;
 }
 
-@media (min-width: 1600px) {
-	.page-intro h1 {
-		font-size: 72px;
-	}
-}
-
-@media (max-width: 1023px) {
-	.page-intro h1 {
-		font-size: 48px;
-	}
-}
-
 @media (max-width: 767px) {
 	.page {
 		padding-top: 24px;
@@ -232,7 +236,7 @@ hr {
 	}
 
 	.page-intro h1 {
-		font-size: 40px;
+		line-height: 1.1;
 	}
 
 	.page-intro p {

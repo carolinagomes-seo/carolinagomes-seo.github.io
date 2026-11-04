@@ -167,7 +167,7 @@ const schema = [
 	h1 {
 		max-width: 880px;
 		margin: 24px 0 0;
-		font-size: 56px;
+		font-size: var(--fs-title);
 		letter-spacing: -0.03em;
 		line-height: 1.05;
 	}
@@ -213,9 +213,6 @@ const schema = [
 	}
 
 	@media (max-width: 1023px) {
-		h1 {
-			font-size: 44px;
-		}
 
 		.body {
 			max-width: none;
@@ -228,9 +225,6 @@ const schema = [
 			padding-bottom: 0;
 		}
 
-		h1 {
-			font-size: 32px;
-		}
 
 		.lede {
 			font-size: 17px;

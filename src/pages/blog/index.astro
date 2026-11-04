@@ -419,7 +419,7 @@ const schema = [
 		flex-direction: column;
 		gap: 8px;
 		min-width: 0;
-		max-width: 640px;
+		max-width: var(--measure-intro);
 	}
 
 	.post-text p {
@@ -472,10 +472,6 @@ const schema = [
 
 	/* ---------- <768px ---------- */
 	@media (max-width: 767px) {
-		.page-intro h1 {
-			font-size: 32px;
-			line-height: 1.1;
-		}
 
 		.page-intro p {
 			margin-top: 12px;
