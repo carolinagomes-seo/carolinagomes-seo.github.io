@@ -20,11 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# editor settings
 .idea/
+.vscode/
 
-# local SEO audit report
+# local SEO audit reports, screenshots and data exports (private: never commit)
 seo-audit-report.md
-
-# local screenshots
-audits/GA4 Details.png
+audits/
+data and prints/
